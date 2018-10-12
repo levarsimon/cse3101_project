@@ -1,0 +1,285 @@
+/*
+	*******************************************
+	**************General Styles***************
+	*******************************************
+*/
+
+body{
+	background-color: #ffff66;
+}
+
+/*
+	*******************************************
+	**********Styles for login page************
+	*******************************************
+*/
+
+.logindiv{
+   width: 65%;
+   height:80%;
+   background-color: #585858;
+   border-radius: 30px;
+   padding: 20px;
+   text-align: center;
+   margin-top: 8%;
+   margin-left: 10%;
+
+}
+
+.ConnectMe{
+	color: #484848;
+	font-family: courier;
+	font-size: 6em; 
+	text-align: center; 
+	margin-top: 11%;
+	margin-bottom: 20px;
+}
+
+.connectMeDescription{
+	color: #484848;
+	font-family: monospace;
+	font-size: 3em; 
+	text-align: center; 
+	margin-top: 3%;
+	margin-bottom: 20px;
+}
+
+input[type=text] {
+	width:80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+	width:80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label {
+ 	font-size: 1.1em;
+ 	color: #ffff66;
+ }
+
+ input[type=submit] {
+    width: 30%;
+    background-color: #ffff66;
+    color: black;
+    font-family: times new romans;
+    padding: 14px 20px;
+    margin:auto;
+    border: 2px solid #484848;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-style: bold;
+}
+
+input[type=submit]:hover {
+    background-color: #ffff19;
+}
+
+
+
+.avatar {
+	width: 55%;
+	height: 50%;
+	margin-bottom: 5%;
+}
+
+.row {
+	width: 100%;
+	height: 100%;
+}
+
+.column {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.createAccountButton {
+	width: 32%;
+	height: 12%;
+	font-size: 1.3em;
+	background-color: #585858;
+	color: #ffff19;
+	border-radius: 15px;
+	margin-left: 33%;
+	margin-top: 5%;
+	border-color: #484848;
+	border-width: 3px;
+}
+
+.createAccountButton:hover {
+	background-color: #484848;
+	color: #ffff19;
+}
+
+/*
+	*******************************************
+	***********Styles for Home page************
+	*******************************************
+*/
+
+.header {
+	width: 40%;
+	margin: 50px auto 0px;
+	color: white;
+	background-color: #5F9EA0;
+	text-align: center;
+	border: 1px solid #B0C4DE;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+}
+
+.content {
+	width: 40%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.content a{
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+}
+
+.contacts_link{
+	width: 92%;
+	margin: 0px auto;
+	padding: 10px;
+	margin-bottom: 20px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.error {
+	width: 92%; 
+	margin: 0px auto; 
+	padding: 10px; 
+	border: 1px solid #a94442; 
+	color: #a94442; 
+	background-color: #f2dede; 
+	border-radius: 5px; 
+	text-align: center;
+}
+
+.success {
+	color: #3c763d; 
+	background-color: #dff0d8; 
+	border: 1px solid #3c763d;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.profile_info img {
+	display: inline-block; 
+	width: 50px; 
+	height: 50px; 
+	margin: 5px;
+	float: left;
+}
+
+.profile_info div {
+	display: inline-block; 
+	margin: 5px;
+}
+
+.profile_info:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.contact_link a{
+	margin: auto;
+}
+
+/*
+	*******************************************
+	*********Styles for Contacts page**********
+	*******************************************
+*/
+
+.altrowstable{
+	border-width: 1px;
+	border-color:  #ddd;
+	border-collapse: collapse;
+}
+
+.altrowstable th{
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: #ddd;
+}
+
+.altrowstable td{
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: #bbb;
+}
+
+.oddrowcolor{
+	background-color:#fcfcfc;
+}
+
+.evenrowcolor{
+	background-color:#e0dbdb;
+}
+
+.connectMe{
+	color: #484848;
+	font-family: courier;
+	font-size: 4em; 
+	text-align: left; 
+	margin-top: 2%;
+	margin-left: 4%;
+	margin-bottom: 20px;
+}
+
+.logOutButton {
+	width: 10%;
+	height: 5%;
+	font-size: 20%;
+	background-color: #585858;
+	color: #ffff19;
+	border-radius: 2px;
+	margin-left: 50%;
+	margin-top: 1%;
+	border-color: #484848;
+	border-width: 1px;
+	display: inline;
+}
+
+
+th {
+	font-size: 16px;
+	color: #88dd88;
+	background-color: #585858;
+}
+
+.add_button{
+	margin-left: 4%;
+}
+
+.search_form{
+	margin-left: 50%;
+	display: inline;
+}
