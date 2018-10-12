@@ -23,3 +23,11 @@ window.onload = function()
 {
 	altRows('alternatecolor');
 }
+
+function delete_id(id)
+{
+	if(confirm('RECORD WILL BE PERMANENTLY DELETED. DO WANT TO PROCEED?'))
+	{
+		window.location.href='contacts.php?delete_id='+id;
+	}
+}

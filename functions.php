@@ -2,7 +2,7 @@
 	include('dbConnection.php');
 	session_start();
 
-	// variable declaration
+	// GLOBAL VARIABLES
 	$username = "";
 	$errors   = array(); 
 
