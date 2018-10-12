@@ -96,6 +96,13 @@
 					{
 						echo "<p><a href='contacts.php'><button class='button'>Back</button</a></p>";
 					}
+					else
+					{
+						$sql = "SELECT * FROM contacts WHERE contactID = $ID";
+						$sqlQuery = mysqli_query($dbConnected, $sql);
+						$queryRow = mysqli_fetch_array($sqlQuery, MYSQLI_ASSOC);
+						echo "<p><a href='admin_contacts_view.php?uid=".$queryRow['userID']."'><button class='button'>Back</button></a></p>";
+					}
 				}
 			?>
 		</div>
