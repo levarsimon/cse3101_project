@@ -20,6 +20,7 @@
 				<a href="index.php?logout='1'" style="color: red;">logout</a>
 			</div>
 			<div>
+				<!-- FORM TO EXECUTE A SEARCH -->
 				<form method="POST" action="search.php">
 					<input type="text" name="q" placeholder="search">
 					<input type="submit" name="search" value="Search">
