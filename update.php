@@ -53,7 +53,10 @@
 				}
 				else
 				{
-					echo "<p><a href='admin_contacts_view.php'><button class='button'>Back</button</a></p>";
+					$selectUserID = "SELECT * FROM contacts WHERE contactID = $cID";
+					$queryUserID = mysqli_query($dbConnected, $selectUserID);
+					$row = mysqli_fetch_array($queryUserID, MYSQLI_ASSOC);
+					echo "<p><a href='admin_contacts_view.php?uid=".$row['userID']."'><button class='button'>Back</button</a></p>";
 				}
 			?>
         </div>

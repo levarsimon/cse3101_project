@@ -2,7 +2,13 @@
 	require_once "dbConnection.php";
 	require_once "functions.php";
 	
-	if (isset($_POST['create'])) {	// STORING THE VALUES SUBMITTED FROM THE FORM INTO VARIABLES
+	if(isset($_GET['userID']))
+	{
+		$theUser = $_GET['userID'];
+	}
+	
+	if (isset($_POST['create']))	// STORING THE VALUES SUBMITTED FROM THE FORM INTO VARIABLES
+	{
 		$fname = $_POST['firstname'];
 		$mnameone = $_POST['middlenameone'];
 		$mnametwo = $_POST['middlenametwo'];
@@ -16,46 +22,22 @@
 		$email =  $_POST['email'];
 		$dobirth = $_POST['dob'];
 		$memo = $_POST['memo'];
-
-		if ($_SESSION['user']['user_type'] == 'user')
+		
+		if ($theUser == 2)
 		{
-			if ($_SESSION['user']['username'] == 'user1')
-			{
-				// SQL QUERY TO INSERT CONTACT INFORMATION INTO THE CONTACTS TABLE OF THE DATABASE
-				$sql = "INSERT INTO contacts (firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID) VALUES ('$fname', '$mnameone', '$mnametwo', '$lname', '$nname', '$hnumber', '$wnumber', '$mnumber', '$alineone', '$alinetwo', '$email', '$dobirth', '$memo', 2)"; 
-				$sqlQuery = mysqli_query($dbConnected, $sql);
-				$_SESSION['message'] = "Address saved"; 
-				header('location: contacts.php');
-			}
-			else
-			{
-				// SQL QUERY TO INSERT CONTACT INFORMATION INTO THE CONTACTS TABLE OF THE DATABASE
-				$sql = "INSERT INTO contacts (firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID) VALUES ('$fname', '$mnameone', '$mnametwo', '$lname', '$nname', '$hnumber', '$wnumber', '$mnumber', '$alineone', '$alinetwo', '$email', '$dobirth', '$memo', 3)"; 
-				$sqlQuery = mysqli_query($dbConnected, $sql);
-				$_SESSION['message'] = "Address saved"; 
-				header('location: contacts.php');
-			}
+			// SQL QUERY TO INSERT CONTACT INFORMATION INTO THE CONTACTS TABLE OF THE DATABASE
+			$sql = "INSERT INTO contacts (firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID) VALUES ('$fname', '$mnameone', '$mnametwo', '$lname', '$nname', '$hnumber', '$wnumber', '$mnumber', '$alineone', '$alinetwo', '$email', '$dobirth', '$memo', 2)"; 
+			$sqlQuery = mysqli_query($dbConnected, $sql);
+			$_SESSION['message'] = "Address saved"; 
+			header('location: admin_contacts_view.php?uid=$theUser');
 		}
 		else
 		{
-			if(isset($_GET['userID']))
-			{
-				$theUser = $_GET['userID'];
-				if($theUser == 2)
-				{
-					$sql = "INSERT INTO contacts (firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID) VALUES ('$fname', '$mnameone', '$mnametwo', '$lname', '$nname', '$hnumber', '$wnumber', '$mnumber', '$alineone', '$alinetwo', '$email', '$dobirth', '$memo', 2)"; 
-					$sqlQuery = mysqli_query($dbConnected, $sql);
-					$_SESSION['message'] = "Address saved"; 
-					header('location: admin_contacts_view.php');
-				}
-				else
-				{
-					$sql = "INSERT INTO contacts (firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID) VALUES ('$fname', '$mnameone', '$mnametwo', '$lname', '$nname', '$hnumber', '$wnumber', '$mnumber', '$alineone', '$alinetwo', '$email', '$dobirth', '$memo', 3)"; 
-					$sqlQuery = mysqli_query($dbConnected, $sql);
-					$_SESSION['message'] = "Address saved"; 
-					header('location: admin_contacts_view.php');
-				}
-			}
+			// SQL QUERY TO INSERT CONTACT INFORMATION INTO THE CONTACTS TABLE OF THE DATABASE
+			$sql = "INSERT INTO contacts (firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID) VALUES ('$fname', '$mnameone', '$mnametwo', '$lname', '$nname', '$hnumber', '$wnumber', '$mnumber', '$alineone', '$alinetwo', '$email', '$dobirth', '$memo', 3)"; 
+			$sqlQuery = mysqli_query($dbConnected, $sql);
+			$_SESSION['message'] = "Address saved"; 
+			header('location: admin_contacts_view.php?uid=$theUser');
 		}
 	}
 ?>
@@ -70,7 +52,7 @@
 
 	<body>
 		<div id="main2">
-			<form method='post' action="create.php">	<!-- FORM TO CAPTURE USER'S INPUT -->
+			<form method='post' action="admin_create.php">	<!-- FORM TO CAPTURE USER'S INPUT -->
 				<!-- TABLE FOR THE USER TO ENTER CONTACT INFORMATION -->
 				<table class='table table-bordered'>
 					<tr>

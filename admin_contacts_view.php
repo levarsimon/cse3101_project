@@ -4,14 +4,27 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>My Addressbook</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
-		<script src="function.js"></script>
 	</head>
 	
 	<body>
 		<div id="main">
 		<br>
+		<?php
+			if(isset($_POST['selection']))
+			{
+				$select = $_POST['users'];
+				if($select == 'user1')
+				{
+					$userID = 2;
+				}
+				else
+				{
+					$userID = 3;
+				}
+			}
+		?>
 		<center>
-			<a href="create.php"><button class="button" name="create">Add Member</button></a>
+			<a href="admin_create.php?user=<?php echo $userID;?>"><button class="button" name="create">Add Member</button></a>
 		</center>
 		
 		<div class="profile_info">
@@ -28,10 +41,20 @@
 			</div>
 		</div>
 		
+		<form method="post" action="admin_contacts_view.php">	<!-- FORM TO SELECT WHICH USER CONTACTS TO VIEW -->
+			<p>Select user</p><br>
+			<select name="users">
+				<option value="user1">User1</option>
+				<option value="user2">User2</option>
+			</select>
+			<input type="submit" name="selection" value="Select">
+		</form>
+		
 			<?php
 				include('functions.php');
 				require_once 'dbConnection.php';
 				
+				// GET USER ACCOUNT SELECTION FROM ADMIN HOME PAGE
 				if (isset($_POST['selection']))
 				{
 					$selection = $_POST['users'];
@@ -51,10 +74,26 @@
 				}
 				else
 				{
-					echo "Could not select contacts";
+					// GET userID FROM update.php
+					if(isset($_GET['uid']))
+					{
+						$userID = $_GET['uid'];
+						if($userID == 2)
+						{
+							$contacts_SQLselect = "SELECT  ";	// SQL QUERY TO SELECT CONTACTS FROM THE CONTACTS TABLE OF THE DATABASE
+							$contacts_SQLselect .= "contactID, firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID ";	
+							$contacts_SQLselect .= "FROM contacts WHERE userID = 2";
+						}
+						else
+						{
+							$contacts_SQLselect = "SELECT  ";	// SQL QUERY TO SELECT CONTACTS FROM THE CONTACTS TABLE OF THE DATABASE
+							$contacts_SQLselect .= "contactID, firstname, middlenameone, middlenametwo, lastname, nickname, homenumber, worknumber, mobilenumber, addresslineone, addresslinetwo, email, dob, memo, userID ";	
+							$contacts_SQLselect .= "FROM contacts WHERE userID = 3";
+						}
+					}
 				}
 				
-				echo "<center><h1>List of Contacts for $selection</h1></center>";
+				echo "<center><h1>List of Contacts</h1></center>";
 		
 				$contacts_SQLselect_Query = mysqli_query($dbConnected, $contacts_SQLselect);	// QUERYING THE DATABASE
 				// CREATE A TABLE TO DISPLAY THE CONTACTS
