@@ -5,21 +5,26 @@
 */
 
 body{
-	background-color: #ffff66;
+	background-color: #33658A;
 }
 
 /*
 	*******************************************
-	**********Styles for login page************
+	**********Styles for login page************ 
 	*******************************************
 */
 
-.logindiv{
+
+
+
+
+.login{
    width: 65%;
    height:80%;
-   background-color: #585858;
-   border-radius: 30px;
-   padding: 20px;
+   background-color: #25E6E8;
+   border-radius: 20px;
+   border: 2px #F6AE2D solid;
+    padding: 20px;
    text-align: center;
    margin-top: 8%;
    margin-left: 10%;
@@ -27,7 +32,7 @@ body{
 }
 
 .ConnectMe{
-	color: #484848;
+	color: #F6AE2D; /*#EE6C4D; */
 	font-family: courier;
 	font-size: 6em; 
 	text-align: center; 
@@ -36,7 +41,7 @@ body{
 }
 
 .connectMeDescription{
-	color: #484848;
+	color: #25E6E8;   /* #EE6C4D; */
 	font-family: monospace;
 	font-size: 3em; 
 	text-align: center; 
@@ -44,50 +49,70 @@ body{
 	margin-bottom: 20px;
 }
 
+label {
+	font-size: 1.3em;
+	color: #2F4858;
+}
+
 input[type=text] {
 	width:80%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 6px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1.5px solid #F6AE2D;
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 
 input[type=password] {
 	width:80%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 5px 0px;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1.5px solid #F6AE2D;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-label {
- 	font-size: 1.1em;
- 	color: #ffff66;
- }
 
- input[type=submit] {
-    width: 30%;
-    background-color: #ffff66;
-    color: black;
+input[type=submit] {
+    width: 80%;
+    background-color: #2F4858;
+    color: #F6AE2D;
     font-family: times new romans;
-    padding: 14px 20px;
+    padding: 5px 20px;
     margin:auto;
-    border: 2px solid #484848;
-    border-radius: 25px;
+    border: 0px solid #F6AE2D;
+    border-radius: 0x;
     cursor: pointer;
     font-size: 1.3em;
     font-style: bold;
 }
 
 input[type=submit]:hover {
-    background-color: #ffff19;
+    background-color: #2F4858;
+    color: #25E6E8;
 }
 
+.indexavatar{
+	width: 80%;
+	height: 80%;
+}
 
+.viewContactButton{
+   padding: 5px;
+   border: 2px solid #2F4858;
+   color: #2F4858;
+   background-color:#25E6E8 ;
+   font-size: 1.3em;
+   margin-top: 10px;
+   border-radius: 3px;
+}
+
+.viewContactButton:hover{
+	background-color:#F6AE2D ;
+}
 
 .avatar {
 	width: 55%;
@@ -109,19 +134,21 @@ input[type=submit]:hover {
 .createAccountButton {
 	width: 32%;
 	height: 12%;
-	font-size: 1.3em;
-	background-color: #585858;
-	color: #ffff19;
-	border-radius: 15px;
+	color: white;
+	font-size: 1.7em;
+	font-family: times new romans;
+	background-color: #33658A ;
+	color: #33312E;
+	border-radius: 0px;
 	margin-left: 33%;
 	margin-top: 5%;
-	border-color: #484848;
-	border-width: 3px;
+	border: 2px solid #F6AE2D;
 }
 
 .createAccountButton:hover {
-	background-color: #484848;
-	color: #ffff19;
+	background-color: #2F4858;
+    color: #F6AE2D;
+    border: 2px #F38D68 solid
 }
 
 /*
@@ -129,14 +156,15 @@ input[type=submit]:hover {
 	***********Styles for Home page************
 	*******************************************
 */
-
 .header {
 	width: 40%;
+	font-family: courier;
+	font-size: 2em; 
 	margin: 50px auto 0px;
-	color: white;
-	background-color: #5F9EA0;
+	color: #2F4858;
+	background-color: #25E6E8;
 	text-align: center;
-	border: 1px solid #B0C4DE;
+	border: 2px solid #F38D68;
 	border-bottom: none;
 	border-radius: 10px 10px 0px 0px;
 	padding: 20px;
@@ -146,23 +174,20 @@ input[type=submit]:hover {
 	width: 40%;
 	margin: 0px auto;
 	padding: 20px;
-	border: 1px solid #B0C4DE;
+	border: 2px solid #F38D68;
 	background: white;
-	border-radius: 0px 0px 10px 10px;
-}
-
-.content a{
-	text-align: center;
+	border-radius:0px 0px 10px 10px;
 }
 
 a{
+	text-align: center;
 	text-decoration: none;
 }
 
 .contacts_link{
 	width: 92%;
-	margin: 0px auto;
-	padding: 10px;
+	margin: 15px auto;
+	padding: 10px 0px 0px 0px;
 	margin-bottom: 20px;
 	text-align: center;
 	text-decoration: none;
@@ -170,7 +195,7 @@ a{
 
 .error {
 	width: 92%; 
-	margin: 0px auto; 
+	margin: 15px 0px 0px 0px auto; 
 	padding: 10px; 
 	border: 1px solid #a94442; 
 	color: #a94442; 
@@ -180,11 +205,12 @@ a{
 }
 
 .success {
-	color: #3c763d; 
-	background-color: #dff0d8; 
-	border: 1px solid #3c763d;
+	color: #2F4858; 
+	background-color: #F6AE2D; 
+	border: 2px #39C5C3 solid;
 	margin-bottom: 20px;
 	text-align: center;
+	font-size: 1.4em;
 }
 
 .profile_info img {
@@ -208,7 +234,7 @@ a{
 
 .contact_link a{
 	margin: auto;
-}
+} 
 
 /*
 	*******************************************
@@ -217,8 +243,8 @@ a{
 */
 
 .altrowstable{
-	border-width: 1px;
-	border-color:  #ddd;
+	border-width: 10px;
+	border-color:  yellow;
 	border-collapse: collapse;
 }
 
@@ -227,13 +253,15 @@ a{
 	padding: 3px;
 	border-style: solid;
 	border-color: #ddd;
+	background-color:#F6AE2D;
 }
 
 .altrowstable td{
 	border-width: 1px;
 	padding: 3px;
 	border-style: solid;
-	border-color: #bbb;
+	border-color: #F6AE2D;
+	background-color: white;
 }
 
 .oddrowcolor{
@@ -254,25 +282,32 @@ a{
 	margin-bottom: 20px;
 }
 
-.logOutButton {
-	width: 10%;
-	height: 5%;
-	font-size: 20%;
-	background-color: #585858;
-	color: #ffff19;
-	border-radius: 2px;
-	margin-left: 50%;
-	margin-top: 1%;
-	border-color: #484848;
-	border-width: 1px;
-	display: inline;
-}
 
 
 th {
 	font-size: 16px;
-	color: #88dd88;
-	background-color: #585858;
+	color: #2F4858;
+	background-color: white;
+}
+
+.searchContent{
+	width: 100%;
+}
+
+.searchContent th{
+	background-color: #F6AE2D; 
+	color: #33658A; 
+	font-size: 1.2em;
+	padding: 8px;
+
+
+}
+
+.searchContent td{
+	background-color: #F6AE2D;
+	color: #33658A; 
+	font-size: 1.2em;
+	padding: 8px;
 }
 
 .add_button{
@@ -283,3 +318,40 @@ th {
 	margin-left: 50%;
 	display: inline;
 }
+
+.addMemberButton {
+	background-color: #F6AE2D;
+	color: #33658A;
+	font-size: 1.2em;
+	padding: 2px;
+	border: none;
+}
+
+.addMemberButton:hover {
+	background-color: #F6AE2D;
+    color: #2F4858;
+    border: 0px #F38D68 solid;
+}
+
+
+/*   Contact page styles 
+*/
+
+
+
+.head {
+	width: 97.2%;
+	font-family: courier;
+	font-size: 2em; 
+	color: #2F4858;
+	background-color: #25E6E8;
+	padding: 20px;
+}
+
+.logoutButton{
+	background-color: #F6AE2D;
+	float: right;
+	border: 2px #2F4858 solid; 
+	font-size: 0.6em;
+}
+

@@ -12,7 +12,7 @@
 			<?php
 				include_once 'dbConnection.php';
 				require_once 'functions.php';
-				
+				echo"<div>";
 				if(isset($_POST['search'])){
 					$q = $_POST['q'];
 					$sql = "SELECT * FROM contacts WHERE firstname LIKE '%" . $q . "%' OR middlenameone LIKE '%" . $q . "%' OR";
@@ -26,28 +26,10 @@
 						echo "No result found!";
 					}
 					else{
-						echo "<table class='altrowstable' id='alternatecolor'>";
-							echo "<thead>";
-								echo "<tr>";
-									echo "<th>Contact ID</th>";
-									echo "<th>First Name</th>";
-									echo "<th>Middle Name</th>";
-									echo "<th>Middle Name</th>";
-									echo "<th>Last Name</th>";
-									echo "<th>Nickame</th>";
-									echo "<th>Home Number</th>";
-									echo "<th>Work Number</th>";
-									echo "<th>Mobile Number</th>";
-									echo "<th>Address Line 1</th>";
-									echo "<th>Address Line 2</th>";
-									echo "<th>Email</th>";
-									echo "<th>Date of Birth</th>";
-									echo "<th>Memo</th>";
-									echo "<th>Edit</th>";
-									echo "<th>Delete</th>";
-								echo"</tr>";
-							echo "</thead>";
-							echo "<tbody>";
+
+					 echo"<div style='margin: 5% 30% 10% 30%;'>";
+
+						echo "<table class='searchContent'>";
 							
 							$indx = 1;
 								
@@ -68,33 +50,39 @@
 								$DateOfBirth = $row['dob'];
 								$Memo = $row['memo'];
 								
-								echo "<tr>";
-									echo "<td>".$ID."</td>";
-									echo "<td>".$FirstName."</td>";
-									echo "<td>".$MiddleNameOne."</td>";
-									echo "<td>".$MiddleNameTwo."</td>";
-									echo "<td>".$LastName."</td>";
-									echo "<td>".$Nickname."</td>";
-									echo "<td>".$HomeNumber."</td>";
-									echo "<td>".$WorkNumber."</td>";
-									echo "<td>".$MobileNumber."</td>";
-									echo "<td>".$AddressLineOne."</td>";
-									echo "<td>".$AddressLineTwo."</td>";
-									echo "<td>".$Email."</td>";
-									echo "<td>".$DateOfBirth."</td>";
-									echo "<td>".$Memo."</td>";
-									echo "<td align='center'><a href='edit.php?eid=".$row['contactID']."' title='Edit'><img src='images/edit.png' width='20px'/></a></td>";
-									echo "<td align='center'><a href='functions.php?id=".$row['contactID']."' title='Delete'><img src='images/delete.png' width='20px'/></a></td>";
-								echo "</tr>";
 								
+								
+									echo "<tr> <th align='right'>Contact ID: </th> <td> $ID </td> </tr>"; 
+									echo "<tr><th align='right'>First Name: </th><td>".$FirstName."</td></tr>";
+									echo "<tr><th align='right'>Middle Name: </th><td>".$MiddleNameOne."</td></tr>";
+									echo "<tr><th align='right'>Middle Name: </th><td>".$MiddleNameTwo."</td></tr>";
+									echo "<tr><th align='right'>Last Name: </th><td>".$LastName."</td></tr>";
+									echo "<tr><th align='right'>Nickname: </th><td>".$Nickname."</td></tr>";
+									echo "<tr><th align='right'>Home Number: </th><td>".$HomeNumber."</td></tr>";
+									echo "<tr><th align='right'>Work Number: </th><td>".$WorkNumber."</td></tr>";
+									echo "<tr><th align='right'>Mobile Number: </th><td>".$MobileNumber."</td></tr>";
+									echo "<tr><th align='right'>Address Line 1: </th><td>".$AddressLineOne."</td></tr>";
+									echo "<tr><th align='right'>Address Line 2: </th><td>".$AddressLineTwo."</td></tr>";
+									echo "<tr><th align='right'>Date of Birth: </th><td>".$DateOfBirth."</td></tr>";
+									echo "<tr><th align='right'>Memo: </th><td>".$Memo."</td></tr>";
+									echo "<tr> <td align='center' colspan='2' style='padding:15px;'><a href='edit.php?eid=".$row['contactID']."' title='Edit'><img src='images/edit.png' width='50px' style='margin-right:15px;'/></a>  
+									<a href='functions.php?id=".$row['contactID']."' title='Delete'><img src='images/delete.png' width='50px'/></a></td> </tr>";
+								 
+
+								  echo"</table> <br>";
+
 								$indx++;
 							}
-						echo "</table>";
+						
 						mysqli_free_result($query);
+					  
 					}
+
+					
+					echo"<div style='margin-left:92%;'>";
 					if($_SESSION['user']['user_type'] == 'user')
 					{
-						echo "<p><a href='contacts.php'><button class='button'>Back</button</a></p>";
+						echo "<a href='contacts.php'><button class='logoutButton' style='width:130px; height: 40px; font-size:1.1em;'>Back</button</a>";
 					}
 					else
 					{
@@ -103,8 +91,14 @@
 						$queryRow = mysqli_fetch_array($sqlQuery, MYSQLI_ASSOC);
 						echo "<p><a href='admin_contacts_view.php?uid=".$queryRow['userID']."'><button class='button'>Back</button></a></p>";
 					}
+					echo"</div>";
+					
 				}
+				echo "</div>";
+			   echo"</div>";
 			?>
+
 		</div>
 	</body>
 </html>
+

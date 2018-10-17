@@ -3,7 +3,7 @@
 	$db = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'pwdpwd',
 	'database' => 'myaddressbook',
 	);
 ?>

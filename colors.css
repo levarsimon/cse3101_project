@@ -1,0 +1,67 @@
+/*
+			COLOR SCHEME
+		light blue: #25E6E8
+		dark blue: #33658A
+		Blue grey: #2F4858
+		yellow: #F6AE2D
+		orange: #F26419
+
+
+*/
+
+<table>
+	<tr> <th> </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<header> </header>
+
+<div id="main">
+
+
+
+		<div style="width: 100%; background-color: white; padding-top: 100px;">
+			
+			<div>
+				<button name="create" style="display: inline;"><a href="create.php">Add Member</a></button>
+			</div>
+
+			<div class="profile_info" style="display: inline-block; float: right;">
+			
+					<!-- FORM TO EXECUTE A SEARCH -->
+					
+				
+			</div>
+		
+	    </div>

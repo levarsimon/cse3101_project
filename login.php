@@ -15,16 +15,16 @@
 			<div class="column">
 				<p class="ConnectMe">ConnectMe</p>
 				<p class="connectMeDescription">Stay connected<br>with the people<br>who matter<br><br>Designed by A-Team<br></p>
-				<button class="createAccountButton">Create an account today</button>
+				<button class="createAccountButton" style="color: #F6AE2D;"> Create Account</button>
 			</div>
 
 			<!-- THE LOGIN FORM -->
 			<div class="column">
 				<form method="post" action="login.php">
-					<div class="logindiv">
-						<img src="images/address_book_icon.jpg" alt="Avatar" class="avatar"><br>
+					<div class="login" style="color: #2F4858;">
+						<img src="images/user1.png" alt="Avatar" class="avatar"><br>
 
-						<label for="username"><b>Username</b></label><br>
+						<label for="username"><b style="">Username</b ></label><br>
 						<input type="text" placeholder="Username" name="username" required><br>
 
 						<label for="password"><b>Password</b></label><br>

@@ -1,0 +1,79 @@
+
+/*Add new contact styles */
+
+.column {
+    float: left;
+    width: 43%;
+}
+
+.formFormat {
+    border-radius: 30px;
+    background-color: #484848; /* #40e0d0; */
+    padding: 15px;
+}
+
+input[type=date] {
+	width:80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=text], select{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=textarea]{
+    width: 80%;
+    height:110px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 30%;
+    background-color: #ffff66;
+    color: black;
+    font-family: times new romans;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 2px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left:50%;
+    font-size: 1.3em;
+    font-style: bold;
+}
+
+input[type=submit]:hover {
+    background-color: #ffff19;
+}
+
+
+label {
+ 	font-size: 1.1em;
+ 	color: #ffff66;
+ }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*Log in page styles */
+

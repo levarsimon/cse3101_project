@@ -1,4 +1,12 @@
+<?php 
+	// PHP SCRIPT TO ENSURE USER IS LOGGED IN BEFORE ACCESSING THE INDEX PAGE
+	include('functions.php');
+?>
+
 <!DOCTYPE html>
+
+
+
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,30 +17,56 @@
 	
 	<body>
 		<div id="main">
+		<div class="head">
+			<div style="display: inline-block;">		
+		    	<h2>ConnectMe</h2>
+	    	</div>
+	    	<div style="float:right; margin-top: 3%;">
+				<img src="images/user1.png" width="60px">			
+				
+					<?php echo $_SESSION['user']['username']; ?>
+						
+							<br>
+							<button class="logoutButton"><a href="index.php?logout='1'" style="color: #2F4858;">Logout</a></button>
+						
+					
+			</div>
+
+		</div>
+
 		<br>
 		<center>
-			<a href="create.php"><button class="button" name="create">Add Member</button></a>
+			<h1 style="color: #F6AE2D;">Your Contacts</h1>
 		</center>
-		
-		<div class="profile_info">
-			<img src="images/user_profile.png" width="40px">
-			<div>
-				<a href="index.php?logout='1'" style="color: red;">logout</a>
-			</div>
-			<div>
-				<!-- FORM TO EXECUTE A SEARCH -->
+
+
+
+
+
+
+		<div style="background-color: #33658A; width:100%;">
+
+			<div style="float:right; margin: 0px; padding:0px;">
 				<form method="POST" action="search.php">
-					<input type="text" name="q" placeholder="search">
-					<input type="submit" name="search" value="Search">
+						<input type="text" name="q" placeholder="search">
+						<input type="submit" name="search" value="Search">
 				</form>
 			</div>
+
+			<div>
+				<a href="create.php"><button name="create" style="margin-top:90px;"  class="addMemberButton"> + Add Member</button></a>
+			</div>
+
 		</div>
-		
-		<center>
-			<h1>Your Contacts</h1>
-		</center>
-			<?php
-				include('functions.php');
+
+
+
+
+
+
+
+					<?php
+		/*		include('functions.php'); */
 				require_once 'dbConnection.php';
 				if ($_SESSION['user']['user_type'] == 'user')	// CHECKING IF IT IS A REGULAR USER OR ADMIN
 				{
@@ -55,10 +89,10 @@
 				}
 
 				$contacts_SQLselect_Query = mysqli_query($dbConnected, $contacts_SQLselect);	// QUERYING THE DATABASE
-				// CREATE A TABLE TO DISPLAY THE CONTACTS
-				echo "<table class='altrowstable' id='alternatecolor'>";
+				// CREATE A TABLE TO DISPLAY THE CONTACTS class='altrowstable' id='alternatecolor'
+				echo "<table>";
 					echo "<thead>";							// PRINTING THE TABLE HEADINGS TO SCREEN
-						echo "<tr>";
+						echo "<tr class='altrowstable'>";
 							echo "<th>Contact ID</th>";
 							echo "<th>First Name</th>";
 							echo "<th>Middle Name</th>";
@@ -99,7 +133,7 @@
 						$DateOfBirth = $row['dob'];
 						$Memo = $row['memo'];
 						// PRINTING THE VALUES TO THE TABLE
-						echo "<tr>";
+						echo "<tr class='altrowstable'>";
 							echo "<td>".$ID."</td>";
 							echo "<td>".$FirstName."</td>";
 							echo "<td>".$MiddleNameOne."</td>";
@@ -124,6 +158,7 @@
 	
 				mysqli_free_result($contacts_SQLselect_Query);
 			?>
+		</div>
 	</body>
 </html>	
 				

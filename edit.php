@@ -27,7 +27,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Edit Contact</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
+		<link href="createstyle.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
@@ -40,13 +40,63 @@
 				</div>
 			</div>
 			
-			<form method='post' action="update.php">
-				<!-- TABLE TO DISPLAY THE CONTACT INFORMATION TO BE EDITED -->
-				<table class='table table-bordered'>
+			<div style="margin-left: 20%; margin-right: 20%;">
+			<form method='post' action="update.php" class="formFormat">
+				 <div class="row">
+	     <div class="column" style="padding-left: 11%;">
+		    <label for="fname">First Name*</label> <br>
+		     <input type='text' name='firstname' value="<?php echo $row['firstname'];?>" class='form-control' placeholder='' /> <br>
+
+		     <label for="lname">Last Name*</label> <br>
+		     <input type='text' name='lasstname' value="<?php echo $row['lastname'];?>" class='form-control' placeholder='' /> <br>
+		    
+		     <label for="fname">Middle Name1</label><br>
+		     <input type='text' name='middlenameone' value="<?php echo $row['middlenameone'];?>" class='form-control' placeholder='' /> <br>
+
+		     <label for="lname">Middle Name2</label><br>
+		     <input type='text' name='middlenametwo' value="<?php echo $row['middlenametwo'];?>" class='form-control' placeholder='' /> <br>
+
+		     <label for="lname">Nickname</label><br>
+		     <input type='text' name='nickname' value="<?php echo $row['nickname'];?>" class='form-control' placeholder='' /> <br>
+		    
+		     <label for="fname">Telephone Number*</label><br>
+		     <input type='text' name='homenumber' value="<?php echo $row['homenumber'];?>" class='form-control' placeholder='' /> <br>
+
+		     <label for="lname">Cellphone Number*</label><br>
+		     <input type='text' name='cellnumber' value="<?php echo $row['cellnumber'];?>" class='form-control' placeholder='' /> <br>
+		    
+		     <label for="fname">Work Number</label><br>
+		     <input type='text' name='mobilenummber' value="<?php echo $row['mobilenumber'];?>" class='form-control' placeholder='' /> <br>
+		    </div>
+
+		    
+		   <div class="column" >
+		    <label for="fname">Email</label><br>
+		    <input type='text' name='email' value="<?php echo $row['email'];?>" class='form-control' placeholder='' /> <br>   
+
+		    <label for="lname">Address Line1*</label><br>
+		    <input type='text' name='addresslineone' value="<?php echo $row['addresslineone'];?>" class='form-control' placeholder='' /> <br>
+		    
+		     <label for="lname">Address Line2</label><br>
+		    <input type='text' name='addresslinetwo' value="<?php echo $row['addresslinetwo'];?>" class='form-control' placeholder='' /> <br>
+		    
+		    
+		    <label for="lname">Date of Birth*</label><br>
+		    <input type='Date' name='dob' value="<?php echo $row['dob'];?>" class='form-control' placeholder='' /> <br>
+		    
+		    <label for="lname">Memo</label> <br>
+		    <input type='textarea' name='memo' value="<?php echo $row['memo'];?>" class='form-control' placeholder='' /> <br>
+    
+    		<br>
+    		<input type="submit" class="viewContactButton"; value="Save">
+    </div>
+    </div>
+				<!-- TABLE TO DISPLAY THE CONTACT INFORMATION TO BE EDITED 
+				<table class='table table-bordered'> 
 					<tr>
 						<td colspan="2"><h1>Edit Contact Information </h1></td>
 					</tr>
-					<input type='hidden' name='id' value="<?php echo $row['contactID'];?>"/>
+					<input type='hidden' name='id' value="<?php /*echo $row['contactID'];?>"/>
 					<tr>
 						<td>First Name</td>
 						<td><input type='text' name='firstname' value="<?php echo $row['firstname'];?>" class='form-control' placeholder='' /></td>
@@ -97,16 +147,17 @@
 					</tr>
 					<tr>
 						<td>Memo</td>
-						<td><input type='text' name='memo'  value="<?php echo $row['memo']; ?>" class='form-control' placeholder=''></td>
+						<td><input type='text' name='memo'  value="<?php echo $row['memo']*/; ?>" class='form-control' placeholder=''></td>
 					</tr>
 					<tr>
 						<td></td>
 						<td>
-							<button type="submit" class="button" >Save</button>
-						</td>
+							<button type="submit" class="button" >Save</button> 
+						</td> 
 					</tr>
-				</table>
+				</table> -->
 			</form>
+		 </div>
 		</div>
 	</body>
 </html>

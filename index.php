@@ -15,8 +15,8 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 	<body>
-		<div class="header">
-			<h2>Home Page</h2>
+	 <div class="header">
+			<h2>ConnectMe</h2>
 		</div>
 		<div class="content">
 			<!-- NOTIFICATION MESSAGE THAT DEPENDS ON THE OUTCOME OF THE LOGIN ATTEMPT -->
@@ -30,25 +30,33 @@
 					</h3>
 				</div>
 			<?php endif ?>
-			
-			<div class='contacts_link'>
-				<h3><a href='contacts.php'>Go to contacts</a></h3>  <!-- LINK TO THE LIST OF CONTACTS -->
-			</div>
-			
-			<!-- LOGGED IN USER INFORMATION -->
-			<div class="profile_info">
-				<img src="images/user_profile.png">
-				<div>
+
+		<!--	<div class="row">
+			  <div class="column">  -->
+			   <div style="display: -webkit-box;">
+			   	<div style="width: 40%; margin-left: 20%;">
+			  	<img src="images/user1.png" class="indexavatar">
+			    </div>
+				<div style="width: 10%; margin-top: 20%;">
 					<?php  if (isset($_SESSION['user'])) : ?>
-						<strong><?php echo $_SESSION['user']['username']; ?></strong>
+						<strong style="font-size: 1.8em; color: #25E6E8;"><?php echo $_SESSION['user']['username']; ?></strong>
 						<small>
 							<br>
-							<a href="index.php?logout='1'" style="color: red;">logout</a>
+							<a href="index.php?logout='1'" style="color: #F26419; font-size: 1.5em;">Logout</a>
 						</small>
 
 					<?php endif ?>
 				</div>
+			   </div>
+			<!--  </div>
 			</div>
+			<div class="column"> -->
+			<div class='contacts_link'>
+				<button class="viewContactButton"> <a href='contacts.php' style="color: #2F4858;">View Contacts</a> </button>   <!-- LINK TO THE LIST OF CONTACTS -->
+			</div>
+		<!--	</div> -->
+			
+			<!-- LOGGED IN USER INFORMATION -->
 		</div>
 	</body>
 </html>

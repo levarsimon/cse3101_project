@@ -1,10 +1,10 @@
-<?php
+<?php 
 	include('dbConnection.php');
 	session_start();
 
 	// GLOBAL VARIABLES
 	$username = "";
-	$errors   = array();
+	$errors   = array(); 
 
 	// return user array from their id
 	function getUserById($id)
@@ -35,7 +35,7 @@
 			echo '</div>';
 		}
 	}
-
+	
 	function isLoggedIn()
 	{
 		if (isset($_SESSION['user'])) {
@@ -44,7 +44,7 @@
 			return false;
 		}
 	}
-
+	
 	// log user out if logout button clicked
 	if (isset($_GET['logout']))
 	{
@@ -52,7 +52,7 @@
 		unset($_SESSION['user']);
 		header("location: login.php");
 	}
-
+	
 	// call the login() function if register_btn is clicked
 	if (isset($_POST['login_btn']))
 	{
@@ -90,7 +90,7 @@
 				{
 					$_SESSION['user'] = $logged_in_user;
 					$_SESSION['success']  = "You are now logged in";
-					header('location: admin_index.php');
+					header('location: admin_index.php');		  
 				}
 				else
 				{
@@ -105,22 +105,12 @@
 			}
 		}
 	}
-
+	
 	if (isset($_GET['id']))
 	{
 		$id = $_GET['id'];
 		mysqli_query($dbConnected, "DELETE FROM contacts WHERE contactID=$id");
-		$_SESSION['message'] = "Address deleted!";
-
-		if($_SESSION['user']['user_type'] == 'user')
-		{
-			header('location: contacts.php');
-		}
-		else {
-				$sql = "SELECT * FROM contacts WHERE contactID = $ID";
-				$sqlQuery = mysqli_query($dbConnected, $sql);
-				$queryRow = mysqli_fetch_array($sqlQuery, MYSQLI_ASSOC);
-				header('location: admin_contacts_view.php?uid=$queryRow["userID"]');
-		}
+		$_SESSION['message'] = "Address deleted!"; 
+		header('location: contacts.php');
 	}
 ?>
