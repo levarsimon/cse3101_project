@@ -1,3 +1,7 @@
+<?php 
+	// PHP SCRIPT TO ENSURE USER IS LOGGED IN BEFORE ACCESSING THE INDEX PAGE
+	include('functions.php');
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,6 +12,19 @@
 	
 	<body>
 		<div id="main">
+			<div class="head">
+			<div style="display: inline-block;">		
+		    	<h2>ConnectMe</h2>
+	    	</div>
+	    	<div class="profile_info" style="float: right; margin-top: 2%;">
+			<img src="images/admin_profile.png" style="width: 80px; height: 80px;">
+			<div>
+				<br>
+				<?php echo $_SESSION['user']['username']; ?> <br>
+				<a href="index.php?logout='1'" style="color: #2F4858; font-size: 0.6em;" class="logoutButton">logout</a>
+			</div>
+			</div>
+		</div>
 		<br>
 		<?php
 			if(isset($_POST['selection']))
@@ -23,35 +40,10 @@
 				}
 			}
 		?>
-		<center>
-			<a href="admin_create.php?user=<?php echo $userID;?>"><button class="button" name="create">Add Member</button></a>
-		</center>
-		
-		<div class="profile_info">
-			<img src="images/admin_profile.png" width="40px">
-			<div>
-				<a href="index.php?logout='1'" style="color: red;">logout</a>
-			</div>
-			<div>
-				<!-- FORM TO EXECUTE A SEARCH -->
-				<form method="POST" action="search.php">
-					<input type="text" name="q" placeholder="search">
-					<input type="submit" name="search" value="Search">
-				</form>
-			</div>
-		</div>
-		
-		<form method="post" action="admin_contacts_view.php">	<!-- FORM TO SELECT WHICH USER CONTACTS TO VIEW -->
-			<p>Select user</p><br>
-			<select name="users">
-				<option value="user1">User1</option>
-				<option value="user2">User2</option>
-			</select>
-			<input type="submit" name="selection" value="Select">
-		</form>
+	
 		
 			<?php
-				include('functions.php');
+				
 				require_once 'dbConnection.php';
 				
 				// GET USER ACCOUNT SELECTION FROM ADMIN HOME PAGE
@@ -92,14 +84,41 @@
 						}
 					}
 				}
+				?>
+				<br>
+				<center><h1 style="color: #F6AE2D;">List of Contacts</h1></center>
+
+				<div style="background-color: #33658A; width:100%; display: inline-block;">
+
+					<div style="float:right; margin: 0px; padding:0px; display: inline-block;">
+						<form method="POST" action="search.php">
+								<input type="text" name="q" placeholder="search">
+								<input type="submit" name="search" value="Search">
+						</form>
+					</div>
+
+					<div>
+						
+						<form method="post" action="admin_contacts_view.php">	<!-- FORM TO SELECT WHICH USER CONTACTS TO VIEW -->
+	
+							<select name="users" style="width: 10%; padding-top: 9px; padding-bottom: 7px;">
+								<option value="user1">User1</option>
+								<option value="user2">User2</option>
+							</select>
+							<input type="submit" name="selection" value="Select" style="width:10%;">
+						</form>	<br><br>
+						<a href="admin_create.php?user=<?php echo $userID;?>"><button class="addMemberButton" name="create""> + Add Member</button></a>
 				
-				echo "<center><h1>List of Contacts</h1></center>";
+					</div>
+
+		        </div>
+		    <?php
 		
 				$contacts_SQLselect_Query = mysqli_query($dbConnected, $contacts_SQLselect);	// QUERYING THE DATABASE
 				// CREATE A TABLE TO DISPLAY THE CONTACTS
-				echo "<table class='altrowstable' id='alternatecolor'>";
+				echo "<table>";
 					echo "<thead>";										// PRINTING THE TABLE HEADINGS TO SCREEN
-						echo "<tr>";
+						echo "<tr class='altrowstable'>";
 							echo "<th>Contact ID</th>";
 							echo "<th>First Name</th>";
 							echo "<th>Middle Name</th>";
@@ -140,7 +159,7 @@
 						$DateOfBirth = $row['dob'];
 						$Memo = $row['memo'];
 						// PRINTING THE VALUES TO THE TABLE
-						echo "<tr>";
+						echo "<tr class='altrowstable'>";
 							echo "<td>".$ID."</td>";
 							echo "<td>".$FirstName."</td>";
 							echo "<td>".$MiddleNameOne."</td>";
@@ -165,5 +184,6 @@
 	
 				mysqli_free_result($contacts_SQLselect_Query);
 			?>
+		</div>
 	</body>
 </html>	

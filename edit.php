@@ -44,47 +44,48 @@
 			<form method='post' action="update.php" class="formFormat">
 				 <div class="row">
 	     <div class="column" style="padding-left: 11%;">
-		    <label for="fname">First Name*</label> <br>
+			<input type='hidden' name='id' value="<?php echo $row['contactID'];?>" class='form-control' placeholder='' /> <br>
+		    <label for="firstname">First Name*</label> <br>
 		     <input type='text' name='firstname' value="<?php echo $row['firstname'];?>" class='form-control' placeholder='' /> <br>
-
-		     <label for="lname">Last Name*</label> <br>
-		     <input type='text' name='lasstname' value="<?php echo $row['lastname'];?>" class='form-control' placeholder='' /> <br>
 		    
-		     <label for="fname">Middle Name1</label><br>
+		     <label for="middlenameone">Middle Name1</label><br>
 		     <input type='text' name='middlenameone' value="<?php echo $row['middlenameone'];?>" class='form-control' placeholder='' /> <br>
-
-		     <label for="lname">Middle Name2</label><br>
+			
+		     <label for="middlenametwo">Middle Name2</label><br>
 		     <input type='text' name='middlenametwo' value="<?php echo $row['middlenametwo'];?>" class='form-control' placeholder='' /> <br>
-
-		     <label for="lname">Nickname</label><br>
+			 
+			 <label for="lastname">Last Name*</label> <br>
+		     <input type='text' name='lastname' value="<?php echo $row['lastname'];?>" class='form-control' placeholder='' /> <br>
+		     
+			 <label for="nickname">Nickname</label><br>
 		     <input type='text' name='nickname' value="<?php echo $row['nickname'];?>" class='form-control' placeholder='' /> <br>
 		    
-		     <label for="fname">Telephone Number*</label><br>
+		     <label for="homenumber">Telephone Number*</label><br>
 		     <input type='text' name='homenumber' value="<?php echo $row['homenumber'];?>" class='form-control' placeholder='' /> <br>
 
-		     <label for="lname">Cellphone Number*</label><br>
-		     <input type='text' name='cellnumber' value="<?php echo $row['cellnumber'];?>" class='form-control' placeholder='' /> <br>
+		     <label for="mobilenumber">Cellphone Number*</label><br>
+		     <input type='text' name='mobilenumber' value="<?php echo $row['mobilenumber'];?>" class='form-control' placeholder='' /> <br>
 		    
-		     <label for="fname">Work Number</label><br>
-		     <input type='text' name='mobilenummber' value="<?php echo $row['mobilenumber'];?>" class='form-control' placeholder='' /> <br>
+		     <label for="worknumber">Work Number</label><br>
+		     <input type='text' name='worknumber' value="<?php echo $row['worknumber'];?>" class='form-control' placeholder='' /> <br>
 		    </div>
 
 		    
 		   <div class="column" >
-		    <label for="fname">Email</label><br>
-		    <input type='text' name='email' value="<?php echo $row['email'];?>" class='form-control' placeholder='' /> <br>   
 
-		    <label for="lname">Address Line1*</label><br>
+		    <label for="addresslineone">Address Line1*</label><br>
 		    <input type='text' name='addresslineone' value="<?php echo $row['addresslineone'];?>" class='form-control' placeholder='' /> <br>
 		    
-		     <label for="lname">Address Line2</label><br>
+		     <label for="addresslinetwo">Address Line2</label><br>
 		    <input type='text' name='addresslinetwo' value="<?php echo $row['addresslinetwo'];?>" class='form-control' placeholder='' /> <br>
 		    
+			<label for="email">Email</label><br>
+		    <input type='text' name='email' value="<?php echo $row['email'];?>" class='form-control' placeholder='' /> <br>
 		    
-		    <label for="lname">Date of Birth*</label><br>
-		    <input type='Date' name='dob' value="<?php echo $row['dob'];?>" class='form-control' placeholder='' /> <br>
+		    <label for="dob">Date of Birth*</label><br>
+		    <input type='Date' name='dob' value="<?php echo $row['dob'];?>" class='form-control' placeholder='YYYY-MM-DD' /> <br>
 		    
-		    <label for="lname">Memo</label> <br>
+		    <label for="memo">Memo</label> <br>
 		    <input type='textarea' name='memo' value="<?php echo $row['memo'];?>" class='form-control' placeholder='' /> <br>
     
     		<br>

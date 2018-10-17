@@ -120,7 +120,7 @@
 		    <input type='textarea' name='memo' class='form-control' placeholder='' /> <br>
     
     <br>
-    <input type="submit" class="viewContactButton"; value="ADD">
+    <input type="submit" name="create" value="ADD">
     </div>
     </div>
    

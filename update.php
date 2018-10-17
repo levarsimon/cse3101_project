@@ -3,9 +3,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Contact Update</title>
-		<link rel="stylesheet" href="style.css" type="text/css"  />
+		<link rel="stylesheet" href="styles.css" type="text/css"  />
 	</head>
-	<body>
+	<body style="background-color: #33658A;">
 		<div id="main2">
 			<?php
 				require_once 'dbConnection.php';
@@ -38,8 +38,10 @@
 					// MESSAGES TO DISPLAY UPON THE SUCCESS OR FAILURE OF THE QUERY
 					if($updateQuery)
 					{
-						echo "<h1><font color='green'>Congratulations!</font></h1>";
-						echo "<p><b>Member Updated in Database.</b></p>";
+						echo"<div style='margin-top:10%; font-size:2em;'> <center>";
+						echo "<h1 ><font color='#F6AE2D'>Congratulations!</font></h1>";
+						echo "<p><b><font color='#25E6E8'>Member Updated in Database.</b></p>";
+						echo "</center></div>";
 					}
 					else
 					{
@@ -49,14 +51,14 @@
 
 				if($_SESSION['user']['user_type'] == 'user')
 				{
-					echo "<p><a href='contacts.php'><button class='button'>Back</button</a></p>";
+					echo "<a href='contacts.php'><center><button class='logoutButton' style='float:none; font-size:1.2em; padding:8px 25px;'>Back</button></center></a>";
 				}
 				else
 				{
 					$selectUserID = "SELECT * FROM contacts WHERE contactID = $cID";
 					$queryUserID = mysqli_query($dbConnected, $selectUserID);
 					$row = mysqli_fetch_array($queryUserID, MYSQLI_ASSOC);
-					echo "<p><a href='admin_contacts_view.php?uid=".$row['userID']."'><button class='button'>Back</button</a></p>";
+					echo "<p><a href='admin_contacts_view.php?uid=".$row['userID']."'><button class='logoutButton' style='float:none; font-size:1.2em; padding:8px 25px;'>Back</button</a></p>";
 				}
 			?>
         </div>
